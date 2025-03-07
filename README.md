@@ -1,6 +1,6 @@
 ## Unveiling the Mist over 3D Vision-Language Understanding: <br/> Object-centric Evaluation with Chain-of-Analysis
 
-This is the repository that contains source code for the [Beacon3D project page](https://beacon3d-3d.github.io/).
+This is the repository that contains source code for the [Beacon3D project page](https://beacon-3d.github.io/).
 
 If you find Beacon3D useful for your work, please cite:
 ```bibtex

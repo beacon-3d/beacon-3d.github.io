@@ -129,13 +129,31 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./assets/beacon3d.png">
+  <link rel="icon" href="./assets/logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="https://kit.fontawesome.com/69dc91e44b.js" crossorigin="anonymous"></script>
+
+  <style>
+    .description {
+      font-size: 1.125rem;
+      color: #374151; /* Tailwind's gray-700 */
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 
 </head>
 
@@ -188,7 +206,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <img src="assets/beacon3d.png" width="10%">
+          <img src="assets/logo.png" width="10%">
           <h1 class="title is-3 publication-title">Unveiling the Mist over 3D Vision-Language Understanding: Object-centric Evaluation with Chain-of-Analysis</h1>
           <h4 class="title is-4 publication-title">CVPR 2025</h4>
           <div class="is-size-5 publication-authors">
@@ -297,37 +315,63 @@
     </div>
     <!--/ Paper video -->
 
-    <!-- Abstract. -->
+    <!-- Overview -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+      <div class="column">
+        <h2 class="title is-4">Overview</h2>
+        <img src="assets/teaser.png" alt="Illustrative overview of Beacon3D">
+        <div class="content has-text-justified" style="margin-top: 5px;">
           <p>
-            Existing 3D vision-language (3D-VL) benchmarks fall short in evaluating 3D-VL models, 
-            creating a "mist" that obscures rigorous insights into model capabilities and 3D-VL tasks. 
-            This mist persists due to three key limitations. 
-            First, flawed test data, like ambiguous referential text in the grounding task, 
-            can yield incorrect and unreliable test results. 
-            Second, oversimplified metrics such as simply averaging accuracy per question answering (QA) pair, 
-            cannot reveal true model capability due to their vulnerability to language variations. 
-            Third, existing benchmarks isolate the grounding and QA tasks, 
-            disregarding the underlying coherence that QA should be based on solid grounding capabilities. 
-            To unveil the "mist", we propose Beacon3D, a benchmark for 3D-VL grounding and QA tasks, 
-            delivering a perspective shift in the evaluation of 3D-VL understanding. 
-            Beacon3D features (i) high-quality test data with precise and natural language, 
-            (ii) object-centric evaluation with multiple tests per object to ensure robustness, 
-            and (iii) a novel chain-of-analysis paradigm to address language robustness and model performance coherence across grounding and QA. 
-            Our evaluation of state-of-the-art 3D-VL models on Beacon3D reveals that 
-            (i) object-centric evaluation elicits true model performance and particularly weak generalization in QA; 
-            (ii) grounding-QA coherence remains fragile in current 3D-VL models, 
-            and (iii) incorporating large language models (LLMs) to 3D-VL models, 
-            though as a prevalent practice, hinders grounding capabilities and has yet to elevate QA capabilities. 
-            We hope Beacon3D and our comprehensive analysis could benefit the 3D-VL community towards faithful developments.
+            An illustration of Beacon3D, a novel benchmark for 3D grounding and question answering (QA) tasks.
+            Beacon3D features an object-centric evaluation framework, with Grounding Chains (G-Chains) and Grounding-QA Chains (GQA-Chains) for each object.
+            The evaluation adopts object-centric metrics to ensure robustness and utilizes chain-of-analysis for studies in task coherence.
+            We also design various knowledge types such as class, appearance ("App."), geometry ("Geo."), spatial ("Spa."), and existence ("Exi.").
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="width: 100%; margin: 0 auto;">
+          <img src="assets/scenes.png" width="40%" alt="30 high-quality real 3D scenes in Beacon3D">
+          <img src="assets/data_stats.png" width="59%" alt="Beacon3D data statistics">
+          <p style="margin-top: -5px;">
+            Beacon3D is built on 30 high-quality real 3D scenes meticulously selected from ScanNet, 3RScan, and MultiScan.
+            The object-centric evaluation includes more than 800 objects and shows a diverse distribution of knowledge types in grounding and QA tasks.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!--/ Overview -->
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4 has-text-centered">Summary</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <div class="bg-gray-100 py-6 rounded-xl text-left shadow" style="padding-left: 3rem; padding-right: 2.5rem;">
+            <h2 class="flex items-center text-xl font-semibold mb-4">
+              🤔<span class="ml-2" style="font-size: large; font-weight: bold;">Limitations of existing 3D-VL benchmarks</span>
+            </h2>
+            <ul class="list-none space-y-2">
+              <li style="color: rgb(177, 92, 92); font-weight: bold;">🗃️&nbsp; Flawed test data</li>
+              <li style="color: rgb(177, 92, 92); font-weight: bold;">📊&nbsp; Insufficient evaluation metrics</li>
+              <li style="color: rgb(177, 92, 92); font-weight: bold;">🔗&nbsp; Isolation of grounding and QA tasks</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-100 p-6 rounded-xl text-left shadow">
+            <h2 class="flex items-center text-xl font-semibold mb-4">
+              💡<span class="ml-2" style="font-size: large; font-weight: bold;">Highlights of the Beacon3D benchmark</span>
+            </h2>
+            <ul class="list-none space-y-2">
+              <li style="color: rgb(84, 156, 79); font-weight: bold;">🗃️&nbsp; High-quality test data</li>
+              <li style="color: rgb(84, 156, 79); font-weight: bold;">📊&nbsp; Object-centric evaluation metrics</li>
+              <li style="color: rgb(84, 156, 79); font-weight: bold;">🔗&nbsp; Grounding Chain and Grounding-QA Chain</li>
+            </ul>
+          </div>
+        </div>
+        <br/>
+
+      </div>
+    </div>
 
   </div>
 </section>
@@ -336,48 +380,160 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <!-- Model -->
-    <!-- <div class="columns is-centered">
+    <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Model</h2>
+        <h2 class="title is-4 has-text-centered">From Existing 3D-VL Benchmarks to Beacon3D</h2>
+
+        <!-- Test data -->
+        <div class="content has-text-justified">
+          <p>
+            <b style="color: rgb(177, 92, 92);">🗃️ Flawed test data.</b>
+            We observe notable data flaws including ambiguous referential texts in the grounding task,
+            ambiguous questions and incomplete answers in the QA task. Such flawed test data could undermine the reliability of evaluation results.
+          </p>
+        </div>
+        <div style="width: 100%; margin: -20px auto 15px auto;">
+          <figure style="text-align: center;">
+          <img src="assets/data_flaw.png" alt="Flawed test data in existing 3D-VL benchmarks">
+            <figcaption style="font-size: 14px; color: #666;">
+              <i><b>Flawed test data in existing 3D-VL benchmarks:</b> the top row shows grounding data and the bottom row shows QA data.</i>
+            </figcaption>
+          </figure>
+        </div>
 
         <div class="content has-text-justified">
           <p>
-            <b>Scene representation.</b> The scene point cloud is partitioned into object-centric point clouds (either ground truth or predicted proposals), 
-            which are then processed by the 3D encoder to obtain object-centric features. We also incorporate an optional 2D branch, 
-            where a 2D encoder processes the agent's ego-view observation to obtain ego-centric features.
+            <b style="color: rgb(84, 156, 79);">🗃️ Beacon3D: high-quality test data.</b>
+            We establish detailed annotation guidelines, ensuring precise and natural language to address prior data flaws.
+            The human study across different 3D-VL benchmarks highlights the quality of Beacon3D test data.
           </p>
-        </div>
-        <div style="width: 80%; margin: 0 auto;">
-          <video poster="" id="scene_representation" autoplay muted loop height="100%">
-            <source src="assets/scene_representation.mp4" type="video/mp4">
-          </video>
-        </div>
-        <br/>
-
       </div>
-    </div> -->
-    <!--/ Model -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin: -15px auto 15px auto; width: 100%;">
+          <figure style="text-align: center;">
+            <img src="assets/data_quality_grouding.png" width="41%" style="margin-left: 1%; margin-right: 2%;" alt="Human study on the quality of grounding data">
+            <img src="assets/data_quality_qa.png" width="41%" style="margin-left: 2%; margin-right: 1%;" alt="Human study on the quality of QA data">
+            <figcaption style="font-size: 14px; color: #666;">
+              <i><b>Human study on the quality of test data:</b> the left shows grounding data and the right shows QA data.</i>
+            </figcaption>
+          </figure>
+    </div>
+        <!--/ Test data -->
 
-    <!-- Data -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Data</h2>
-
+        <!-- Evaluation metrics -->
         <div class="content has-text-justified">
           <p>
-            <b>Two-stage scheme: alignment & instruction tuning.</b> We combine existing datasets and LLM-prompted data to create LEO-align and LEO-instruct.
+            <b style="color: rgb(177, 92, 92);">📊 Insufficient evaluation metrics.</b>
+            We find that simple metrics, such as averaging accuracy over individual QA pairs,
+            are vulnerable to pitfalls like visual ignorance and weak language robustness,
+            falling short in capturing true model capability.
           </p>
         </div>
-        <div style="width: 90%; margin: 0 auto;">
-          <video poster="" id="data" autoplay muted loop height="100%">
-            <source src="assets/data.mp4" type="video/mp4">
+        <div style="display: flex; justify-content: center; margin: -15px auto 15px auto; width: 100%;">
+          <figure style="text-align: center;">
+            <img src="assets/visual_ignorance.png" width="100%" style="margin-left: 2%; margin-right: 0%; margin-bottom: 5px;" alt="Model pitfall: visual ignorance">
+            <figcaption style="font-size: 14px; color: #666;"><i><b>Model pitfall: visual ignorance</b></i></figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img src="assets/language_robustness.png" width="91.5%" style="margin-left: 1%; margin-right: -3%; margin-bottom: 4px;" alt="Model pitfall: weak language robustness">
+            <figcaption style="font-size: 14px; color: #666;"><i><b>Model pitfall: weak language robustness</b></i></figcaption>
+          </figure>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <!-- Left: Text -->
+          <div style="flex: 1;">
+            <div>
+              We present two pilot studies to show the vulnerability of existing evaluation metrics to two model pitfalls:
+              <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>
+                  Visual ignorance: finetuning blind LLMs on SQA3D yields unexpectedly high accuracy,
+                  indicating the deficiency in evaluating the visual capability of 3D-VL models.
+                </li>
+                <li>
+                  Language robustness: rephrasing language yields moderate and significant performance shift in grounding and QA tasks respectively,
+                  indicating that current 3D-VL models are susceptible to language variations.</li>
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Right: Images -->
+          <div style="flex: 1;">
+            <!-- Top image -->
+            <figure style="text-align: center; margin-top: 25px; margin-bottom: 25px;">
+              <img src="assets/sqa_blind.png" alt="Performance of blind LLMs on SQA3D" style="width: 100%;">
+              <figcaption style="font-size: 14px; color: #666;"><i><b>Performance of blind LLMs on SQA3D ( <sup>†</sup> denotes 3D-VL model)</b></i></figcaption>
+            </figure>
+        
+            <!-- Bottom two images side-by-side -->
+            <figure style="text-align: center; margin-bottom: 10px;">
+              <div style="display: flex; gap: 10px; margin-bottom: -2px;">
+                <img src="assets/rephrase_grounding.png" alt="Effect of rephrasing on grounding task" style="width: 49%;">
+                <img src="assets/rephrase_qa.png" alt="Effect of rephrasing on QA task" style="width: 50%;">
+              </div>
+              <figcaption style="font-size: 14px; color: #666;"><i><b>Effect of rephrasing language on grounding (left) and QA (right) tasks</b></i></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 5px;">
+          <p>
+            <b style="color: rgb(84, 156, 79);">📊 Beacon3D: object-centric evaluation metrics.</b>
+            In contrast to previous per-case average metrics, we design three diverse test cases per object and adopt object-centric metrics,
+            which require the model to make corrcet prediction in all three cases.
+          </p>
+        </div>
+        <div style="display: flex; justify-content: center; margin: -15px auto 15px auto; width: 100%;">
+          <figure style="text-align: center;">
+            <img src="assets/grounding_example.png" width="100%" style="margin-left: 0%; margin-right: 0%; margin-bottom: 5px;" alt="Data example: three grounding texts per object">
+            <figcaption style="font-size: 14px; color: #666;"><i><b>Data example: three grounding texts per object</b></i></figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img src="assets/obj_metrics.png" width="84%" style="margin-left: 1%; margin-right: -3%; margin-bottom: 3.5px;" alt="Object-centric metrics">
+            <figcaption style="font-size: 14px; color: #666;"><i><b>Case-centric metrics vs. Object-centric metrics</b></i></figcaption>
+          </figure>
+        </div>
+        <!--/ Evaluation metrics -->
+
+        <!-- Grounding-QA coherence -->
+        <div class="content has-text-justified" style="margin-top: 5px;">
+          <p>
+            <b style="color: rgb(84, 156, 79);">🔗 Beacon3D: Grounding Chain.</b>
+            We organize the grounding data into Grounding Chains following a coarse-to-fine scheme,
+            which helps assess performance coherence across different granularities and identify the boundary of grounding capability.
+          </p>
+        </div>
+        <div style="width: 80%; margin: -5px auto 15px;">
+          <video poster="" id="grounding_chain" autoplay muted loop height="100%">
+            <source src="assets/g_chain.mp4" type="video/mp4">
           </video>
         </div>
 
+        <div class="content has-text-justified" style="margin-top: 5px;">
+          <div>
+            <b style="color: rgb(84, 156, 79);">🔗 Beacon3D: Grounding-QA Chain.</b>
+            Beacon3D links QA data to grounding data via shared referential texts of the target object.
+            Each question queries a specific aspect (<i>e.g.</i>, appearance) of the object,
+            forming a Grounding-QA Chain that enables analysis of grounding-QA coherence.
+            We identify two types of broken coherence:
+            <ul style="list-style-type: disc; margin-top: 5px; margin-left: 3%;">
+              <li>
+                Type 1: model fails to answer the queried content but can recognize that in grounding task, showing a lack of QA skills.
+              </li>
+              <li>
+                Type 2: model correctly answers the question but fails to ground the target object, indicating shortcut behavior in QA.
+            </ul>
+          </div>
+        </div>
+        <div style="width: 90%; margin: -25px auto 0px;">
+          <video poster="" id="grounding_chain" autoplay muted loop height="100%">
+            <source src="assets/gqa_chain.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!--/ Grounding-QA coherence -->
+
       </div>
-    </div> -->
-    <!--/ Data -->
+    </div>
+
 
     <!-- Demo -->
     <!-- <div class="columns is-centered">
@@ -499,13 +655,91 @@
     </div> -->
     <!--/ Demo -->
 
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4 has-text-centered">Results and Findings</h2>
+        <!-- Metrics -->
+        <div class="content has-text-justified">
+          <p>
+            <b>Metrics.</b>
+            Object-centric metrics elicit a significant performance drop compared to per-case metrics,
+            suggesting that current 3D-VL models lack a comprehensive understanding of objects and are susceptible to language variations.
+          </p>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 0; margin: -10px auto 20px auto; width: 100%;">
+          <figure style="text-align: center;">
+            <img src="assets/results_grounding.png" width="39.7%" style="margin-right: 2%;" alt="Model performance in grounding task">
+            <img src="assets/results_qa.png" width="44%" style="margin-left: 2%;" alt="Model performance in QA task">
+            <figcaption style="font-size: 14px; color: #666; margin-top: 4px;">
+              <i><b>Model performance in grounding (left) and QA (right) tasks:</b> "Case" denotes per-case metrics and "Obj." denotes object-centric metrics.</i>
+            </figcaption>
+          </figure>
+        </div>
+        <!--/ Metrics -->
+
+        <!-- Chain analysis -->
+        <div class="content has-text-justified">
+          <p>
+            <b>Chain analysis: GQA-Chain.</b>
+            We visualize four types of GQA-Chains and observe a limited proportion of good grounding-QA coherence.
+            <i>R</i><sub>1</sub> and <i>R</i><sub>2</sub> measure the two types of broken coherence, both hovering around 50%.
+            This reveals a substantial gap between the skills of grounding and QA, and frequent shortcut behavior in QA.
+          </p>
+        </div>
+        <div style="width: 100%; margin: -5px auto 15px auto;">
+          <figure style="text-align: center;">
+            <img src="assets/chain_analysis_gqa.png" style="margin-left: -2%;" alt="Chain analysis across GQA-Chains">
+            <figcaption style="font-size: 14px; color: #666; margin-top: -10px;">
+              <i><b>GQA-Chain analysis:</b> distribution of four types of GQA-Chains (left) and two metrics for evaluating broken grounding-QA coherence (right).</i>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 10px;">
+          <!-- Left: Text -->
+          <div style="flex: 0.55; margin-top: 30px;">
+            <b>Chain analysis: G-Chain.</b>
+            Evaluation across coarse-to-fine G-Chains shows that fine-grained grounding is more challenging than coarse.
+            The difficulty is pronounced when the model fails on coarse texts.
+            As fine-grained grounding is crucial to solid QA performance,
+            our chain analysis highlights the need to improve 3D-VL models in fine-grained grounding for better grounding-QA coherence.
+          </div>
+        
+          <!-- Right: Images -->
+          <div style="flex: 0.45;">
+            <!-- Top image -->
+            <figure style="text-align: center;">
+              <img src="assets/chain_analysis_g.png" alt="Chain analysis across G-Chains">
+              <figcaption style="font-size: 14px; color: #666;">
+                <i><b>G-Chain analysis:</b> distribution of four types of G-Chains.</i>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <!--/ Chain analysis -->
+
+        <!-- Additional insights -->
+        <div class="content has-text-justified">
+          <p>
+            <b>Model insights.</b>
+            Our evaluation indicates that incorporating LLMs to 3D-VL models weakens grounding capability and does not fundamentally enhance QA capability.
+            This suggests the main bottleneck lies in 3D perception and VL alignment, rather than language modeling or reasoning — LLMs' strength.
+            Therefore, advancing 3D-VL models may rely more on stronger foundation models for 3D scene understanding than on leveraging LLMs.
+          </p>
+        </div>
+        <!--/ Additional insights -->
+      </div>
+    </div>
+
   </div>
 </section>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
+    <h2 class="title is-4 has-text-centered">BibTex</h2>
+    <p style="margin-bottom: 10px;">If you find our work helpful, please consider citing us:</p>
     <pre><code class="language-bibtex">@inproceedings{huang2025unveiling,
   title={Unveiling the Mist over 3D Vision-Language Understanding: Object-centric Evaluation with Chain-of-Analysis},
   author={Huang, Jiangyong and Jia, Baoxiong and Wang, Yan and Zhu, Ziyu and Linghu, Xiongkun and Li, Qing and Zhu, Song-Chun and Huang, Siyuan},

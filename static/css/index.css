@@ -156,47 +156,53 @@ body {
   border-radius: 5px;
 }
 
-#instruction1 {
-  color: rgb(120, 120, 120);
+#prefix {
+  font-weight: bold;
+  color: rgb(112, 143, 171);
+  background-color: rgb(240, 244, 248);
 }
 
-#instruction2 {
-  color: rgb(120, 120, 120);
+#g1 {
+  font-weight: bold;
+  color: rgb(132, 130, 11);
 }
 
-#instruction3 {
-  color: rgb(120, 120, 120);
+#g2 {
+  font-weight: bold;
+  color: rgb(132, 130, 11);
 }
 
-#instruction4 {
-  color: rgb(120, 120, 120);
+#g3 {
+  font-weight: bold;
+  color: rgb(132, 130, 11);
 }
 
-#instruction5 {
-  color: rgb(120, 120, 120);
+#q1 {
+  font-weight: bold;
+  color: rgb(26, 105, 145);
 }
 
-#response1 {
-  color: black;
-  background-color: #e5f8f9;
+#q2 {
+  font-weight: bold;
+  color: rgb(26, 105, 145);
 }
 
-#response2 {
-  color: black;
-  background-color: #e5f8f9;
+#q3 {
+  font-weight: bold;
+  color: rgb(26, 105, 145);
 }
 
-#response3 {
-  color: black;
-  background-color: #e5f8f9;
+#a1 {
+  font-weight: bold;
+  color: rgb(20, 117, 41);
 }
 
-#response4 {
-  color: black;
-  background-color: #e5f8f9;
+#a2 {
+  font-weight: bold;
+  color: rgb(20, 117, 41);
 }
 
-#response5 {
-  color: black;
-  background-color: #e5f8f9;
+#a3 {
+  font-weight: bold;
+  color: rgb(20, 117, 41);
 }
